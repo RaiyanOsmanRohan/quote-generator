@@ -10,6 +10,8 @@ saveButton.addEventListener("click" , saveQuote);
 let savedQuotesArray = [];
 let currentQuote  = {};
 
+generateQuote();
+
  async function generateQuote(){
 
    quoteText.textContent ="";
@@ -62,4 +64,5 @@ let currentQuote  = {};
         `<div class="quoteCard"><p>${element.quote} - <span class="authorStrong">${element.author}</span></p></div>`;
       }
     });
+
   };
