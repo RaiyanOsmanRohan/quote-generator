@@ -1,0 +1,219 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+:root {
+  /* Backgrounds */
+  --bg-color: #1e1e2e;        
+  --bg-color-light: #2c2c45;        
+  --bg-card: #2a2a3c;          
+  --bg-card-light: #363648;       
+
+  /* Text colors */
+  --text-color: #f1f1f1;         
+  --text-color-light: #e5e5e5;   
+  --author-color: #9ca3af;       
+  --author-color-light: #b0b8c1; 
+
+  /* Buttons */
+  --btn-color: #6366f1;          
+  --btn-color-hover: #4f46e5;    
+  --btn-color-active: #3b36c4;   
+  --btn-text-color: #ffffff;     
+
+  /* Accents (optional) */
+  --accent-color: #0d9f6e;       
+  --accent-color-light: #24c88c; 
+}
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+ background-color: var(--bg-color);
+}
+
+.mainContainer{
+  max-width: 1200px;
+  width: 100%;
+  min-height: 85%;
+  display: flex;
+  gap:15px;
+  margin: 0px 15px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+/* quote generator section style*/
+
+.QuoteGeneratorHolder{
+  width: 40%;
+  background-color:var(--bg-color-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.quoteHolder{
+  width: 100%;
+  min-height: 45%;
+  background-color: var(--bg-card);
+  padding: 15px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.653);
+  color: var(--text-color);
+  word-break: keep-all;
+  overflow-y: scroll;
+}
+.quoteHolder::-webkit-scrollbar{
+  display: none;
+}
+
+#quoteText{
+  font-size: 1rem;
+  line-height: 25px;
+ 
+}
+
+.authorNameHolder{
+  width: 100%;
+  background-color: var(--bg-card);
+  padding: 15px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  box-shadow: 4px 4px 10px  rgba(0, 0, 0, 0.653);
+  color: var(--author-color);
+}
+
+.buttons{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.button{
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  background-color: var(--btn-color);
+  color: var(--btn-text-color);
+  transition: all 0.3s;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+#saveQuote{
+  background-color: var(--accent-color-light);
+}
+#saveQuote:hover{
+  background-color: var(--accent-color);
+}
+
+.button:hover{
+  background-color: var(--btn-color-hover);
+  box-shadow: 5px 5px 10px  rgba(0, 0, 0, 0.653);
+}
+.button:active{
+  background-color: var(--btn-color-active);
+   box-shadow: inset 5px 5px 10px  rgba(0, 0, 0, 0.653);
+  
+}
+
+/* quote generator section style end point*/
+
+/*saved qoutes section style*/
+
+.savedQuotes{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 60%;
+  background-color: var(--bg-color-light);
+  padding: 15px;
+  border-radius: 20px;
+  overflow-y: scroll;
+}
+
+.quoteCard{
+  width: 100%;
+  background-color: var(--bg-card-light);
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  transition: all .2s ease-out;
+}
+
+.savedQuotes::-webKit-scrollbar{
+ display: none;
+}
+
+.quoteCard:hover{
+  background-color: var(--bg-card);
+  box-shadow:  0px 5px 10px  rgba(0, 0, 0, 0.653);
+}
+
+.authorStrong{
+  font-weight: bold;
+}
+
+/*saved qoutes section style end poing*/
+
+/*responsive design*/
+
+@media(max-width: 570px){
+
+  body{
+    padding: 15px 15px;
+    background-color: var(--bg-color);
+  }
+
+  .mainContainer{
+    flex-direction: column;
+    height: 100vh;
+    border-radius: 0px;
+    padding: 15px;
+  }
+
+  .QuoteGeneratorHolder{
+    width: 100%;
+    height: 50%;
+    padding: 20px;
+  }
+
+  .quoteHolder{
+     width: 100%;
+     height: 200px;
+  }
+
+  .buttons{
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .button{
+    padding: 6px;
+    font-size: .9em;
+  }
+  /*_=============================_*/
+
+  .savedQuotes{
+    width: 100%;
+    height: 50%;
+  }
+}
